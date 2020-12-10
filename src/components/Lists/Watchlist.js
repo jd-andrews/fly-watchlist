@@ -1,7 +1,7 @@
 import React from "react";
 import "./List.css";
 
-export default function Watchlist() {
+export default function Watchlist({ watchList }) {
   return (
     <div className="hold">
       <div className="App">
@@ -9,13 +9,9 @@ export default function Watchlist() {
       </div>
       <div>
         <ul>
-          <li>Goldenboy</li>
-          <li>Haikyuu!!</li>
-          <li>Jujutsu kaizen</li>
-          <li>Fire Force</li>
-          <li>Toradora</li>
-          <li>Movie that the X Projet sample is from</li>
-          <li>Searchparty</li>
+          {watchList.map((show) => (
+            <li>{show.name}</li>
+          ))}
         </ul>
       </div>
     </div>
