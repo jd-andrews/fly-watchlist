@@ -2,6 +2,7 @@ import React from "react";
 import "./List.css";
 
 export default function Watchlist({ watchList }) {
+  console.log(process.env);
   return (
     <div className="hold">
       <div className="App">

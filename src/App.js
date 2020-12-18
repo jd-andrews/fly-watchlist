@@ -5,6 +5,7 @@ import Watchlist from "./components/Lists/Watchlist";
 import Readlist from "./components/Lists/Readlist";
 import AddInput from "./components/Add/Input";
 import BottomIMG from "./components/BottomIMG/BottomIMG";
+import Lock from "./components/Lock/Lock";
 
 export default function App() {
   const [list, setList] = useState([
@@ -17,6 +18,7 @@ export default function App() {
     { name: "Searchparty" },
     { name: "Darling in the Franxx" },
   ]);
+  const [password, setPassword] = useState("");
 
   return (
     <>
@@ -28,7 +30,11 @@ export default function App() {
           <Readlist />
         </>
         <>
-          <AddInput setList={setList} />
+          {password === "password" ? (
+            <AddInput setList={setList} />
+          ) : (
+            <Lock setPassword={setPassword} />
+          )}
         </>
       </div>
       <div>
